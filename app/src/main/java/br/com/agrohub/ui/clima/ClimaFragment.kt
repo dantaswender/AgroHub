@@ -1,4 +1,4 @@
-package br.com.agrohub.ui.ui.clima
+package br.com.agrohub.ui.clima
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle

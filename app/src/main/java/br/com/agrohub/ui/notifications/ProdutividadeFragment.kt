@@ -1,4 +1,4 @@
-package br.com.agrohub.ui.ui.notifications
+package br.com.agrohub.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

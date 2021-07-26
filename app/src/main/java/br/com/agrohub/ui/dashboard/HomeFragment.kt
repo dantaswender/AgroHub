@@ -1,4 +1,4 @@
-package br.com.agrohub.ui.ui.mapear
+package br.com.agrohub.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import br.com.agrohub.databinding.FragmentHomeBinding
+import br.com.agrohub.databinding.FragmentDashboardBinding
 
-class MapearFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private lateinit var mapearViewModel: MapearViewModel
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var homeViewModel: HomeViewModel
+    private var _binding: FragmentDashboardBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,14 +24,14 @@ class MapearFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mapearViewModel =
-            ViewModelProvider(this).get(MapearViewModel::class.java)
+        homeViewModel =
+            ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        mapearViewModel.text.observe(viewLifecycleOwner, Observer {
+        val textView: TextView = binding.textDashboard
+        homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

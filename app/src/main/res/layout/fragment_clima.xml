@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ui.clima.ClimaFragment">
+    tools:context=".ui.clima.ClimaFragment">
 
     <TextView
         android:id="@+id/tv_clima"
