@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="br.com.agrohub.ui.ui.dashboard.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_mapear"
+        android:name="br.com.agrohub.ui.ui.mapear.MapearFragment"
+        android:label="@string/title_mapear"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_produtividade"
+        android:name="br.com.agrohub.ui.ui.notifications.ProdutividadeFragment"
+        android:label="@string/title_produtividade"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_clima"
+        android:name="br.com.agrohub.ui.ui.clima.ClimaFragment"
+        android:label="clima_fragment"
+        tools:layout="@layout/fragment_clima" />
+</navigation>
