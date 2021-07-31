@@ -4,6 +4,6 @@
     <string name="title_home">Home</string>
     <string name="title_mapear">Mapear</string>
     <string name="title_produtividade">Produtividade</string>
-    <string name="title_clima">Clima</string>
+    <string name="title_clima">Previsão do tempo</string>
     <string name="location">Location</string>
 </resources>

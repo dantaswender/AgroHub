@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="br.com.agrohub.ui.dashboard.HomeFragment"
+        android:name="br.com.agrohub.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_mapear" />
 
     <fragment
         android:id="@+id/navigation_mapear"
         android:name="br.com.agrohub.ui.mapear.MapearFragment"
         android:label="@string/title_mapear"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_produtividade"
@@ -25,6 +25,6 @@
     <fragment
         android:id="@+id/navigation_clima"
         android:name="br.com.agrohub.ui.clima.ClimaFragment"
-        android:label="clima_fragment"
+        android:label="@string/title_clima"
         tools:layout="@layout/fragment_clima" />
 </navigation>

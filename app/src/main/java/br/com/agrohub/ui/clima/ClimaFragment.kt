@@ -9,23 +9,20 @@ import android.location.Geocoder
 import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import br.com.agrohub.databinding.FragmentClimaBinding
 import br.com.agrohub.model.Forecast
+import br.com.agrohub.model.ForecastX
+import br.com.agrohub.ui.clima.adapter.ClimaAdapter
 import br.com.dantaswender.PermissionUtils
 import br.com.dantaswender.mylibrary.data.BadRequest
 import com.google.android.gms.location.*
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.cancel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
@@ -36,6 +33,8 @@ class ClimaFragment : Fragment() {
     private var _binding: FragmentClimaBinding? = null
 
     private val binding get() = _binding!!
+
+    private val language = Locale.getDefault().language
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationRequest: LocationRequest
@@ -87,6 +86,17 @@ class ClimaFragment : Fragment() {
         getIcon(it)
         binding.tvCondition.text = it.current?.forecastCondition?.text
 
+        createAdapter(it.forecast)
+
+    }
+
+    private fun createAdapter(forecast: ForecastX?) {
+        val adapter = forecast?.forecastday?.let {
+            ClimaAdapter(requireContext(), it, language)
+        }
+        val rvDays = binding.rvDays
+        rvDays.visibility = VISIBLE
+        rvDays.adapter = adapter
     }
 
     private fun getIcon(it: Forecast) {
@@ -95,11 +105,6 @@ class ClimaFragment : Fragment() {
         val icon = binding.ivIcon
         Picasso.get().load("https://$urlLogo").into(icon)
 
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
     }
 
     override fun onDestroy() {
@@ -151,7 +156,7 @@ class ClimaFragment : Fragment() {
                         1
                     )
                     climaViewModel.getTemperature(
-                        "${addresses.first().latitude},${addresses.first().longitude}"
+                        "${addresses.first().latitude},${addresses.first().longitude}", language
                     )
                 }
             }

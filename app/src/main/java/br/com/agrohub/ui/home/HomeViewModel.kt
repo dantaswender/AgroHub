@@ -1,13 +1,8 @@
-package br.com.agrohub.ui.dashboard
+package br.com.agrohub.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import br.com.agrohub.ui.BaseViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlin.coroutines.coroutineContext
 
 
 class HomeViewModel : BaseViewModel() {

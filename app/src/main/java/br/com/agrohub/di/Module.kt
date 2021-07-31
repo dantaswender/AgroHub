@@ -4,7 +4,7 @@ import br.com.agrohub.repository.ClimaRepository
 import br.com.agrohub.repository.ClimaRepositoryImpl
 import br.com.agrohub.repository.ServiceApi
 import br.com.agrohub.ui.clima.ClimaViewModel
-import br.com.agrohub.ui.dashboard.HomeViewModel
+import br.com.agrohub.ui.home.HomeViewModel
 import br.com.agrohub.usecase.ClimaUseCase
 import br.com.agrohub.usecase.ClimaUseCaseImpl
 import br.com.dantaswender.mylibrary.RetrofitClient

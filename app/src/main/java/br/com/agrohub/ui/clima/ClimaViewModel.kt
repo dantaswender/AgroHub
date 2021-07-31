@@ -14,12 +14,12 @@ class ClimaViewModel(private val useCase: ClimaUseCase) : BaseViewModel() {
     private val state: MutableLiveData<MainState> = MutableLiveData()
     val viewState: LiveData<MainState> = state
 
-    fun getTemperature(q: String) {
+    fun getTemperature(q: String, language: String) {
         state.value = MainState.IsLoading(true)
         launch {
             val result = useCase.getCurrenteClima(
                 q = q,
-                lang = "pt"
+                lang = language
             )
             onResponse(result)
         }
