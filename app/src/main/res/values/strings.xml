@@ -5,4 +5,5 @@
     <string name="title_mapear">Mapear</string>
     <string name="title_produtividade">Produtividade</string>
     <string name="title_clima">Clima</string>
+    <string name="location">Location</string>
 </resources>
